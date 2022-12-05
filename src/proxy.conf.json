@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "http://e670-35-230-108-162.ngrok.io/",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/": "/"
+      }
+    }
+}

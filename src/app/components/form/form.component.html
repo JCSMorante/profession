@@ -1,0 +1,44 @@
+<div *ngIf="!showLoad" class="container mt-5" style="width:50%">
+    <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+      <div class="row p-5">
+        <h1 class="Dark">Decide tu profesión</h1>
+        <div class="col-md-6">
+          <h3>Ingresa tus calificaciones</h3>
+          <br />
+          <div *ngFor="let calification of califications" class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"
+              ><b>{{ calification.name }}</b></label
+            >
+            <input
+              [(ngModel)]="calification.score"
+              type="number"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Calificación"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3>¿Cuales son tus preferencias?</h3>
+          <br />
+          <div *ngFor="let preference of preferences">
+            <label for="customRange2" class="form-label">{{preference.name}} <span class="badge bg-secondary">{{preference.score}}</span></label>
+            <input [(ngModel)]="preference.score"
+              type="range"
+              class="form-range"
+              min="0"
+              max="10"
+              id="customRange2"
+            />
+          </div>
+          
+        </div>
+        <button (click)="getService()" type="button" class="btn btn-primary">Verificar</button>
+      </div>
+      
+    </div>
+  </div>
+  <div *ngIf="showLoad" class="centerdiv">
+    <img  class="centerImage" src="https://i.stack.imgur.com/kOnzy.gif" alt="">
+  </div>
+  
